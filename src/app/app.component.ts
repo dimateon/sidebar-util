@@ -61,5 +61,45 @@ export class AppComponent {
       name: 'Page 3',
       url: '3',
     },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'Page 2',
+      url: '2',
+    },
   ];
 }

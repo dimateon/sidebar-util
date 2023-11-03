@@ -4,7 +4,6 @@ import {
   ElementRef,
   HostListener,
   Input,
-  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -17,7 +16,7 @@ import { SidebarItem } from './sidebar.interface';
   styleUrls: ['./sidebar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent implements OnInit, OnDestroy {
+export class SidebarComponent implements OnInit {
   @Input() navItems: SidebarItem[] = [];
   constructor(private router: Router) {}
 
@@ -33,7 +32,12 @@ export class SidebarComponent implements OnInit, OnDestroy {
     startingWidth: 0,
   };
 
-  ngOnInit(): void {}
+  public localItems: SidebarItem[] = [];
+  public searchInput: string = '';
+
+  ngOnInit(): void {
+    this.localItems = this.navItems;
+  }
 
   startResizing(event: MouseEvent): void {
     this.resizingEvent = {
@@ -65,5 +69,14 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl(url);
   }
 
-  ngOnDestroy(): void {}
+  public handleSearch(): void {
+    console.log(this.searchInput);
+    if (!this.searchInput) {
+      this.localItems = this.navItems;
+      return;
+    }
+    this.localItems = this.navItems.filter((item) =>
+      item.name.includes(this.searchInput)
+    );
+  }
 }
