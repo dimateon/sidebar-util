@@ -1,0 +1,40 @@
+.with-sidebar {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.nav {
+  width: 200px;
+  background-color: #232323;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &__item {
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 10px;
+
+    &:hover {
+      transition: 0.3s ease;
+      color: red;
+    }
+  }
+}
+
+.content {
+  flex-grow: 1;
+  background-color: blue;
+}
+
+.resizer {
+  position: absolute;
+  width: 6px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: red;
+  cursor: col-resize;
+}

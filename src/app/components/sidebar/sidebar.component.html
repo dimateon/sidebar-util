@@ -1,0 +1,10 @@
+<div class="with-sidebar">
+  <div class="nav" #navRef>
+    <sidebar-item *ngFor="let item of navItems" [item]="item"></sidebar-item>
+
+    <div class="resizer" #resizer (mousedown)="startResizing($event)"></div>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>
