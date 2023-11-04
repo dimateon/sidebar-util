@@ -76,19 +76,10 @@ export class SidebarComponent implements OnInit {
   }
 
   public handleSearch(): void {
-    console.log(this.searchInput);
-    // if (!this.searchInput) {
-    //   this.localItems = this.navItems;
-    //   return;
-    // }
-
     this._filter(this.searchInput);
-    // this.localItems = this.navItems.filter((item) =>
-    //   item.name.includes(this.searchInput)
-    // );
   }
 
-    public _filter(value: string) {
+    public _filter(value: string): void {
       let filterValue = value;
       if (filterValue === '') {
           this.localItems = this.navItems;
@@ -110,7 +101,7 @@ export class SidebarComponent implements OnInit {
       }
     }
 
-    private isFilterMatched(node: SidebarItem, params: any) {
+    private isFilterMatched(node: SidebarItem, params: any): boolean {
       let { searchFields, filterText, isStrictMode } = params;
       let matched = false;
       let fieldValue = node.name.toLowerCase();
@@ -129,7 +120,7 @@ export class SidebarComponent implements OnInit {
         return !(node.childrens && node.childrens.length);
     }
 
-    private findFilteredNodes(node: SidebarItem, paramsWithoutNode: any) {
+    private findFilteredNodes(node: SidebarItem, paramsWithoutNode: any): boolean {
       if (node) {
           let matched = false;
           if (node.childrens) {
