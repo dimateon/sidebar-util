@@ -15,7 +15,7 @@
 }
 
 .nav {
-  width: 200px;
+  width: 300px;
   background-color: #232323;
   color: #fff;
   position: relative;
@@ -48,8 +48,8 @@
 }
 
 .content {
-  flex-grow: 1;
-  background-color: blue;
+  width: calc(100% - 300px);
+  overflow: auto;
 }
 
 .resizer {

@@ -13,37 +13,37 @@ export class AppComponent {
   public navItems: SidebarItem[] = [
     {
       iconUrl: 'assets/heart.svg',
-      name: 'Page 1',
+      name: 'Documents',
       url: '1',
       childrens: [
         {
           iconUrl: 'assets/add-cart.svg',
-          name: 'Page 2',
+          name: 'Work',
           url: '2',
         },
         {
           iconUrl: 'assets/add-cart.svg',
-          name: 'Page 2',
+          name: 'Home',
           url: '2',
         },
         {
           iconUrl: 'assets/add-cart.svg',
-          name: 'Page 2',
+          name: 'Events',
           url: '2',
           childrens: [
             {
               iconUrl: 'assets/add-cart.svg',
-              name: 'Page 2',
+              name: 'Event 1',
               url: '2',
             },
             {
               iconUrl: 'assets/add-cart.svg',
-              name: 'Page 2',
+              name: 'Event 2',
               url: '2',
             },
             {
               iconUrl: 'assets/add-cart.svg',
-              name: 'Page 2',
+              name: 'MEvent 3',
               url: '2',
             },
           ],
@@ -52,54 +52,48 @@ export class AppComponent {
     },
     {
       iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
+      name: 'Movies',
       url: '2',
+      childrens: [
+            {
+              iconUrl: 'assets/add-cart.svg',
+              name: 'Event 1',
+              url: '2',
+            },
+            {
+              iconUrl: 'assets/add-cart.svg',
+              name: 'Event 2',
+              url: '2',
+            },
+            {
+              iconUrl: 'assets/add-cart.svg',
+              name: 'MEvent 3',
+              url: '2',
+            },
+          ],
     },
 
     {
       iconUrl: 'assets/mail.svg',
-      name: 'Page 3',
+      name: 'Coffes',
       url: '3',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
-    },
-    {
-      iconUrl: 'assets/add-cart.svg',
-      name: 'Page 2',
-      url: '2',
+      childrens: [
+            {
+              iconUrl: 'assets/add-cart.svg',
+              name: 'Event 1',
+              url: '2',
+            },
+            {
+              iconUrl: 'assets/add-cart.svg',
+              name: 'Event 2',
+              url: '2',
+            },
+            {
+              iconUrl: 'assets/add-cart.svg',
+              name: 'MEvent 3',
+              url: '2',
+            },
+          ],
     },
   ];
 }

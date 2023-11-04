@@ -18,7 +18,7 @@
 
     <div class="resizer" #resizer (mousedown)="startResizing($event)"></div>
   </div>
-  <div class="content">
+  <div class="content" #contentRef>
     <ng-content></ng-content>
   </div>
 </div>

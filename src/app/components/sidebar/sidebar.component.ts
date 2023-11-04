@@ -26,6 +26,9 @@ export class SidebarComponent implements OnInit {
   @ViewChild('navRef', { static: true })
   public navRef!: ElementRef;
 
+  @ViewChild('contentRef', { static: true })
+  public contentRef!: ElementRef;
+
   private resizingEvent = {
     isResizing: false,
     startingCursorX: 0,
@@ -58,6 +61,9 @@ export class SidebarComponent implements OnInit {
     const newWidth = this.resizingEvent.startingWidth + cursorDeltaX;
 
     this.navRef.nativeElement.style.width = newWidth + 'px';
+
+    this.contentRef.nativeElement.style.width = (window.innerWidth - newWidth) + 'px';
+    
   }
 
   @HostListener('window:mouseup')
@@ -71,12 +77,81 @@ export class SidebarComponent implements OnInit {
 
   public handleSearch(): void {
     console.log(this.searchInput);
-    if (!this.searchInput) {
-      this.localItems = this.navItems;
-      return;
-    }
-    this.localItems = this.navItems.filter((item) =>
-      item.name.includes(this.searchInput)
-    );
+    // if (!this.searchInput) {
+    //   this.localItems = this.navItems;
+    //   return;
+    // }
+
+    this._filter(this.searchInput);
+    // this.localItems = this.navItems.filter((item) =>
+    //   item.name.includes(this.searchInput)
+    // );
   }
+
+    public _filter(value: string) {
+      let filterValue = value;
+      if (filterValue === '') {
+          this.localItems = this.navItems;
+      } else {
+          this.localItems = [];
+          const searchFields: string[] = ['name'];
+          const filterText = filterValue.toLowerCase();
+          const isStrictMode = true;
+          for (let node of this.navItems) {
+              let copyNode = { ...node };
+              let paramsWithoutNode = { searchFields, filterText, isStrictMode };
+              if (
+                  
+                  this.isFilterMatched(copyNode, paramsWithoutNode) || this.findFilteredNodes(copyNode, paramsWithoutNode)
+              ) {
+                  this.localItems.push(copyNode);
+              }
+          }
+      }
+    }
+
+    private isFilterMatched(node: SidebarItem, params: any) {
+      let { searchFields, filterText, isStrictMode } = params;
+      let matched = false;
+      let fieldValue = node.name.toLowerCase();
+          if (fieldValue.indexOf(filterText) > -1) {
+              matched = true;
+          }
+
+      if (!matched || (isStrictMode && !this.isNodeLeaf(node))) {
+          matched = this.findFilteredNodes(node, { searchFields, filterText, isStrictMode }) || matched;
+      }
+
+      return matched;
+    }
+
+    private isNodeLeaf(node: SidebarItem): boolean {
+        return !(node.childrens && node.childrens.length);
+    }
+
+    private findFilteredNodes(node: SidebarItem, paramsWithoutNode: any) {
+      if (node) {
+          let matched = false;
+          if (node.childrens) {
+              let childNodes = [...node.childrens];
+              node.childrens = [];
+              for (let childNode of childNodes) {
+                  let copyChildNode = { ...childNode };
+                  if (this.isFilterMatched(copyChildNode, paramsWithoutNode)) {
+                      matched = true;
+                      node.childrens.push(copyChildNode);
+                  }
+              }
+          }
+
+          if (matched) {
+              node.opened = true;
+              return true;
+          } else {
+            return false;
+          }
+      } else {
+        return false;
+      }
+    }
 }
