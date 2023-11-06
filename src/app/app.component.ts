@@ -19,32 +19,32 @@ export class AppComponent {
         {
           iconUrl: 'assets/add-cart.svg',
           name: 'Work',
-          url: '2',
+          url: '4',
         },
         {
           iconUrl: 'assets/add-cart.svg',
           name: 'Home',
-          url: '2',
+          url: '4',
         },
         {
           iconUrl: 'assets/add-cart.svg',
           name: 'Events',
-          url: '2',
+          url: '3',
           childrens: [
             {
               iconUrl: 'assets/add-cart.svg',
               name: 'Event 1',
-              url: '2',
+              url: '3',
             },
             {
               iconUrl: 'assets/add-cart.svg',
               name: 'Event 2',
-              url: '2',
+              url: '3',
             },
             {
               iconUrl: 'assets/add-cart.svg',
               name: 'MEvent 3',
-              url: '2',
+              url: '4',
             },
           ],
         },
@@ -55,22 +55,22 @@ export class AppComponent {
       name: 'Movies',
       url: '2',
       childrens: [
-            {
-              iconUrl: 'assets/add-cart.svg',
-              name: 'Event 1',
-              url: '2',
-            },
-            {
-              iconUrl: 'assets/add-cart.svg',
-              name: 'Event 2',
-              url: '2',
-            },
-            {
-              iconUrl: 'assets/add-cart.svg',
-              name: 'MEvent 3',
-              url: '2',
-            },
-          ],
+        {
+          iconUrl: 'assets/add-cart.svg',
+          name: 'Event 1',
+          url: '4',
+        },
+        {
+          iconUrl: 'assets/add-cart.svg',
+          name: 'Event 2',
+          url: '4',
+        },
+        {
+          iconUrl: 'assets/add-cart.svg',
+          name: 'MEvent 3',
+          url: '4',
+        },
+      ],
     },
 
     {
@@ -78,22 +78,27 @@ export class AppComponent {
       name: 'Coffes',
       url: '3',
       childrens: [
-            {
-              iconUrl: 'assets/add-cart.svg',
-              name: 'Event 1',
-              url: '2',
-            },
-            {
-              iconUrl: 'assets/add-cart.svg',
-              name: 'Event 2',
-              url: '2',
-            },
-            {
-              iconUrl: 'assets/add-cart.svg',
-              name: 'MEvent 3',
-              url: '2',
-            },
-          ],
+        {
+          iconUrl: 'assets/add-cart.svg',
+          name: 'Event 1',
+          url: '4',
+        },
+        {
+          iconUrl: 'assets/add-cart.svg',
+          name: 'Event 2',
+          url: '5',
+        },
+        {
+          iconUrl: 'assets/add-cart.svg',
+          name: 'MEvent 3',
+          url: '6',
+        },
+      ],
+    },
+    {
+      iconUrl: 'assets/add-cart.svg',
+      name: 'MEvent 3',
+      url: '11',
     },
   ];
 }

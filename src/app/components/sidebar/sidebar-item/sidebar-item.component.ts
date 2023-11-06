@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class SidebarItemComponent {
   @Input() item!: SidebarItem;
   @Input() level!: number;
+  @Input() activeUrl!: string;
 
   constructor(private router: Router) {}
 

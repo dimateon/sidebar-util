@@ -16,6 +16,11 @@
       background-color: #323232;
       transition: 0.3s;
     }
+
+    &.active {
+      background-color: #323232;
+      transition: 0.3s;
+    }
   }
 
   &__icon {

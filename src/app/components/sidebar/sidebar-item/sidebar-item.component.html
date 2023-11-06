@@ -1,6 +1,7 @@
 <div class="sidebar-item">
   <div
     class="sidebar-item__wrapper"
+    [class.active]="activeUrl === item.url"
     (click)="goTo(item.url)"
     [style.padding-left]="levelPadding"
   >
@@ -37,6 +38,7 @@
       *ngFor="let child of item.childrens"
       [item]="child"
       [level]="level ? level + 1 : 2"
+      [activeUrl]="activeUrl"
     ></sidebar-item>
   </div>
 </div>
